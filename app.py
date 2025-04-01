@@ -3,8 +3,11 @@ import json
 import requests
 from flask import Flask, request, jsonify
 from bs4 import BeautifulSoup
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)  # This will allow all domains, but you can configure it more tightly if needed
+
 
 BASE_URL = "https://xaviers.ac/"
 STATIC_DATA_FILE = "college_static.json"
